@@ -70,7 +70,10 @@ const determineWinner = (userChoice, computerChoice) => {
 const playGame = () => {
     let userChoice = getUserChoice('Rock');
     let computerChoice = getComputerChoice();
-    console.log(`Choix user ${userChoice} et choix pc ${computerChoice}`);
+    console.log(`Le choix de l'utilisateur est : ${userChoice}. Le choix de l'ordinateur est : ${computerChoice}`);
+
+   return (determineWinner(userChoice, computerChoice));
 }
 
 
+console.log(playGame());
