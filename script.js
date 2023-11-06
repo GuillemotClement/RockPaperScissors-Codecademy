@@ -1,5 +1,5 @@
 //Saisis utilisateur
-let userInput = 'rock';
+let choixUtilisateur = 'Rock';
 //fonction qui récupère le choix de l'utilisateur et le passe en minuscule
 const getUserChoice = userInput => {
     userInput = userInput.toLowerCase(); //prévoir de passer par un appel de fonction pour lower la saisis user
@@ -15,7 +15,7 @@ const getUserChoice = userInput => {
         return 'User input error';
     };
 };
-
+// console.log(getUserChoice(choixUtilisateur));
 
 //fonction choix de l'ordinateur
 const getComputerChoice = () => {
@@ -33,4 +33,35 @@ const getComputerChoice = () => {
     };
 };
 
+// console.log(`Choix de l'ordinateur : ${getComputerChoice()}`);
+//fonction qui détermine le gagnant
+const determineWinner = (userChoice, computerChoice) => {
+    //gestion d'égalité
+    if(userChoice === computerChoice){
+        return 'Égalité';
+    };
+    if(userChoice === 'rock'){
+        if(computerChoice === 'paper'){
+            return 'Ordinateur gagne';
+        }else {
+            return 'Utilisateur gagne';
+        };
+    }else if(userChoice === 'paper'){
+        if(computerChoice === 'scissors'){
+            return 'Ordinateur gagne';
+        }else {
+            return 'Utilisateur gagne';
+        };
+    }else if(userChoice === 'scissors'){
+        if(computerChoice === 'rock'){
+            return 'Ordinateur gagne';
+        }else{
+            return 'Utilisateur gagne';
+        }
+    }else {
+        return "Error";
+    };
+}
 
+//Fonctionne mieux avec un appelle de la bonne fonction et un argument
+console.log(determineWinner(getUserChoice(choixUtilisateur), getComputerChoice()));
