@@ -15,7 +15,7 @@ const getUserChoice = userInput => {
         return 'User input error';
     };
 };
-// console.log(getUserChoice(choixUtilisateur));
+// console.log(getUserChoice('rOck'));
 
 //fonction choix de l'ordinateur
 const getComputerChoice = () => {
@@ -64,4 +64,13 @@ const determineWinner = (userChoice, computerChoice) => {
 }
 
 //Fonctionne mieux avec un appelle de la bonne fonction et un argument
-console.log(determineWinner(getUserChoice(choixUtilisateur), getComputerChoice()));
+// console.log(determineWinner(getUserChoice(choixUtilisateur), getComputerChoice()));
+
+//Fonction pour déterminer le vainqueur du la game
+const playGame = () => {
+    let userChoice = getUserChoice('Rock');
+    let computerChoice = getComputerChoice();
+    console.log(`Choix user ${userChoice} et choix pc ${computerChoice}`);
+}
+
+
