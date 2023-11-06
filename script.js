@@ -1,4 +1,5 @@
-let userInput = 'sCissors';
+//Saisis utilisateur
+let userInput = 'rock';
 //fonction qui récupère le choix de l'utilisateur et le passe en minuscule
 const getUserChoice = userInput => {
     userInput = userInput.toLowerCase(); //prévoir de passer par un appel de fonction pour lower la saisis user
@@ -15,6 +16,21 @@ const getUserChoice = userInput => {
     };
 };
 
-console.log(getUserChoice(userInput));
+
+//fonction choix de l'ordinateur
+const getComputerChoice = () => {
+    //Génération d'un nombre aléatoire entre 0 et 2
+    let numberChoice = Math.floor(Math.random() * 3);
+    //Gestion du choix de l'ordinateur selon le nombre généré
+    if(numberChoice === 0){
+        return 'rock';
+    }else if(numberChoice === 1){
+        return 'paper';
+    }else if(numberChoice === 2){
+        return 'scissors'
+    }else {
+        return 'Error Random Number';
+    };
+};
 
 
