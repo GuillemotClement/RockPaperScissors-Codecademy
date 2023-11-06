@@ -11,6 +11,8 @@ const getUserChoice = userInput => {
         return userInput;
     }else if(userInput === 'scissors'){
         return userInput;
+    }else if(userInput === 'bomb'){
+        return userInput
     }else{
         return 'User input error';
     };
@@ -37,6 +39,9 @@ const getComputerChoice = () => {
 //fonction qui détermine le gagnant
 const determineWinner = (userChoice, computerChoice) => {
     //gestion d'égalité
+    if(userChoice === 'bomb'){
+        return 'Utilisateur gagne'
+    };
     if(userChoice === computerChoice){
         return 'Égalité';
     };
@@ -68,7 +73,7 @@ const determineWinner = (userChoice, computerChoice) => {
 
 //Fonction pour déterminer le vainqueur du la game
 const playGame = () => {
-    let userChoice = getUserChoice('Rock');
+    let userChoice = getUserChoice('Bomb');
     let computerChoice = getComputerChoice();
     console.log(`Le choix de l'utilisateur est : ${userChoice}. Le choix de l'ordinateur est : ${computerChoice}`);
 
